@@ -1,0 +1,132 @@
+/*
+ * Contenedor principal de la página.
+ * Centra el contenido vertical y horizontalmente.
+ */
+.dashboard-container {
+  min-height: 100vh;
+  background-color: #f3f4f6;
+  color: #111827;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+}
+
+/*
+ * Estilos para el encabezado del dashboard.
+ * Se adapta a pantallas más pequeñas.
+ */
+.dashboard-title {
+  font-size: 2.25rem;
+  font-weight: 800;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .dashboard-title {
+    font-size: 3rem;
+  }
+}
+
+/*
+ * Contenedor de las tarjetas.
+ * Utiliza un diseño de cuadrícula para una disposición responsiva.
+ */
+.cards-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  width: 100%;
+  max-width: 72rem;
+}
+
+@media (min-width: 640px) {
+  .cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .cards-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/*
+ * Estilos para cada tarjeta individual.
+ * Incluye sombras, transiciones y efectos hover.
+ */
+.component-card {
+  background-color: #ffffff;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+  transform: translateY(0);
+  border-radius: 1.5rem;
+  padding: 1.5rem;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  border: 2px solid transparent;
+}
+
+.component-card:hover {
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  transform: translateY(-0.25rem);
+  border-color: #6366f1;
+}
+
+/* Estilos para el espacio del icono/imagen */
+.card-image-placeholder {
+  flex-shrink: 0;
+  margin-bottom: 1rem;
+}
+
+/* Estilos para el título de la tarjeta */
+.card-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #111827;
+}
+
+@media (min-width: 768px) {
+  .card-title {
+    font-size: 1.875rem;
+  }
+}
+
+/* Estilos para el tema oscuro */
+.dark .dashboard-container {
+  background-color: #111827;
+  color: #f9fafb;
+}
+
+.dark .component-card {
+  background-color: #1f2937;
+  color: #f9fafb;
+}
+
+.dark .card-title {
+  color: #f9fafb;
+}
+
+/*
+ * Puedes usar un selector de clase en tu SVG.
+ * Por ejemplo: <svg class="card-svg-icon">...</svg>
+ */
+.card-svg-icon {
+  width: 5rem;
+  height: 5rem;
+  color: #6366f1;
+}
+
+@media (min-width: 768px) {
+  .card-svg-icon {
+    width: 6rem;
+    height: 6rem;
+  }
+}
